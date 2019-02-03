@@ -1,0 +1,104 @@
+---- Minecraft Crash Report ----
+
+WARNING: coremods are present:
+  SpongeCoremod (spongeforge-1.12.2-2768-7.1.5.jar)
+Contact their authors BEFORE contacting forge
+
+// Shall we play a game?
+
+Time: 2/3/19 5:54 PM
+Description: Exception in server tick loop
+
+java.lang.NoClassDefFoundError: com/pixelmonmod/pixelmon/enums/EnumPokemon
+	at com.wondertrademod.wondertrade.WondertradeManager.getRandomEntityPixelmon(WondertradeManager.java:152)
+	at com.wondertrademod.wondertrade.WondertradeManager.generateRandomPool(WondertradeManager.java:135)
+	at com.wondertrademod.wondertrade.WondertradeManager.initializePool(WondertradeManager.java:46)
+	at com.wondertrademod.wondertrade.WondertradeManager.onWorldTick(WondertradeManager.java:54)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler_50_WondertradeManager_onWorldTick_WorldTickEvent.invoke(.dynamic)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke(ASMEventHandler.java:90)
+	at net.minecraftforge.fml.common.eventhandler.EventBus.post(EventBus.java:747)
+	at net.minecraftforge.fml.common.eventhandler.EventBus.post(EventBus.java:697)
+	at net.minecraftforge.fml.common.FMLCommonHandler.onPreWorldTick(FMLCommonHandler.java:287)
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:752)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71190_q(DedicatedServer.java:397)
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:668)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:526)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.ClassNotFoundException: com.pixelmonmod.pixelmon.enums.EnumPokemon
+	at net.minecraft.launchwrapper.LaunchClassLoader.findClass(LaunchClassLoader.java:191)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 14 more
+Caused by: java.lang.NullPointerException
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at com.wondertrademod.wondertrade.WondertradeManager.getRandomEntityPixelmon(WondertradeManager.java:152)
+	at com.wondertrademod.wondertrade.WondertradeManager.generateRandomPool(WondertradeManager.java:135)
+	at com.wondertrademod.wondertrade.WondertradeManager.initializePool(WondertradeManager.java:46)
+	at com.wondertrademod.wondertrade.WondertradeManager.onWorldTick(WondertradeManager.java:54)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler_50_WondertradeManager_onWorldTick_WorldTickEvent.invoke(.dynamic)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke(ASMEventHandler.java:90)
+	at net.minecraftforge.fml.common.eventhandler.EventBus.post(EventBus.java:747)
+	at net.minecraftforge.fml.common.eventhandler.EventBus.post(EventBus.java:697)
+	at net.minecraftforge.fml.common.FMLCommonHandler.onPreWorldTick(FMLCommonHandler.java:287)
+
+-- Sponge PhaseTracker --
+Details:
+	Phase Stack: [Empty stack]
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.handler$onCrashReport$zjm000(MinecraftServer.java:3973)
+	at net.minecraft.server.MinecraftServer.func_71230_b(MinecraftServer.java:889)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71230_b(DedicatedServer.java:371)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:558)
+	at java.lang.Thread.run(Thread.java:748)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Linux (amd64) version 4.9.133-xxxx-std-ipv6-64
+	Java Version: 1.8.0_191, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 1845224080 bytes (1759 MB) / 2513960960 bytes (2397 MB) up to 3817865216 bytes (3641 MB)
+	JVM Flags: 4 total; -Xmx4096M -Xms1024M -XX:ParallelGCThreads=2 -XX:ThreadStackSize=512
+	IntCache: cache: 0, tcache: 0, allocated: 12, tallocated: 94
+	FML: MCP 9.42 Powered by Forge 14.23.5.2810 22 mods loaded, 22 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State  | ID                    | Version           | Source                                   | Signature                                |
+	|:------ |:--------------------- |:----------------- |:---------------------------------------- |:---------------------------------------- |
+	| LCHIJA | minecraft             | 1.12.2            | minecraft.jar                            | None                                     |
+	| LCHIJA | mcp                   | 9.42              | minecraft.jar                            | None                                     |
+	| LCHIJA | FML                   | 8.0.99.99         | custom.jar                               | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCHIJA | forge                 | 14.23.5.2810      | custom.jar                               | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCHIJA | spongeapi             | 7.1.0-366290f8    | spongeforge-1.12.2-2768-7.1.5.jar        | None                                     |
+	| LCHIJA | sponge                | 1.12.2-7.1.5      | spongeforge-1.12.2-2768-7.1.5.jar        | None                                     |
+	| LCHIJA | spongeforge           | 1.12.2-2768-7.1.5 | spongeforge-1.12.2-2768-7.1.5.jar        | None                                     |
+	| LCHIJA | nucleus               | 1.6.0-S7.1        | Nucleus-1.6.0-S7.1-MC1.12.2-plugin.jar   | None                                     |
+	| LCHIJA | activetime            | 1.4.3             | ActiveTime-s7.1-v1.4.3.jar               | None                                     |
+	| LCHIJA | pixelmon              | 7.0.0             | Pixelmon.jar                             | None                                     |
+	| LCHIJA | agp                   | 1.0.1             | AGP_Responged_S7.1.0-V1.0.1.jar          | None                                     |
+	| LCHIJA | catclearlag           | 0.8.3             | CatClearLag-0.8.3.jar                    | None                                     |
+	| LCHIJA | economylite           | 2.15.1            | EconomyLite-7.1.0-2.15.1.jar             | None                                     |
+	| LCHIJA | noportal              | 1.1.0             | NoPortal-1.1.0.jar                       | None                                     |
+	| LCHIJA | pixelmoneconomybridge | 2.0.1             | PixelmonEconomyBridge-1.12.2-2.0.1.jar   | None                                     |
+	| LCHIJA | pixelshout            | 1.2.0             | PixelShout-1.12.2-1.2.0-universal.jar    | None                                     |
+	| LCHIJA | shabbyholograms       | 1.0.0             | shabbyholograms-1.0-SNAPSHOT-shaded.jar  | None                                     |
+	| LCHIJA | clearchat             | 1.0.0             | Sponge-ClearChat.jar                     | None                                     |
+	| LCHIJA | sts                   | 1.0.2             | STS S7.1.0-1.0.2.jar                     | None                                     |
+	| LCHIJA | unity                 | 2.3.0             | unity-2.3.0.jar                          | None                                     |
+	| LCHIJA | wondertrade           | 4.5.4             | WonderTrade-1.12.2-4.5.4-universal.jar   | None                                     |
+	| LCHIJA | worldedit             | 6.1.9-SNAPSHOT    | worldedit-sponge-6.1.9-SNAPSHOT-dist.jar | None                                     |
+
+	Loaded coremods (and transformers): 
+SpongeCoremod (spongeforge-1.12.2-2768-7.1.5.jar)
+  org.spongepowered.common.launch.transformer.SpongeSuperclassTransformer
+	Profiler Position: N/A (disabled)
+	Player Count: 0 / 80; []
+	Is Modded: Definitely; Server brand changed to 'fml,forge,sponge'
+	Type: Dedicated Server (map_server.txt)
